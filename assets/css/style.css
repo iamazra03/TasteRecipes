@@ -1,0 +1,491 @@
+/* Genel Stil */
+:root {
+    --primary: #ff6b6b;
+    --secondary: #4ecdc4;
+    --dark: #2d3436;
+    --light: #f9f9f9;
+    --gray: #dfe6e9;
+    --success: #55efc4;
+    --warning: #ffeaa7;
+    --danger: #ff7675;
+    --info: #74b9ff;
+}
+
+body {
+    font-family: 'Nunito', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--dark);
+    background-color: var(--light);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--primary);
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #ff5252;
+}
+
+.section-title {
+    position: relative;
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--primary);
+    margin: 10px auto 0;
+}
+
+.section-subtitle {
+    color: #636e72;
+    margin-bottom: 30px;
+}
+
+/* Header ve Navigasyon */
+.top-bar {
+    font-size: 0.85rem;
+}
+
+.top-bar .social-links a {
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    margin-left: 5px;
+    transition: background-color 0.3s;
+}
+
+.top-bar .social-links a:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.navbar-brand img {
+    transition: transform 0.3s;
+}
+
+.navbar-brand:hover img {
+    transform: scale(1.05);
+}
+
+.navbar .nav-item {
+    margin: 0 10px;
+}
+
+.navbar .nav-link {
+    position: relative;
+    font-weight: 500;
+    padding: 5px 0;
+}
+
+.navbar .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary);
+    transition: width 0.3s;
+}
+
+.navbar .nav-link:hover::after,
+.navbar .nav-link.active::after {
+    width: 100%;
+}
+
+/* Banner Section */
+.banner-section {
+    margin-bottom: 50px;
+}
+
+.carousel-inner {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-item {
+    height: 500px;
+}
+
+.carousel-item img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    bottom: 40px;
+}
+
+/* Kategori Kartları */
+.category-card {
+    overflow: hidden;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.category-card img {
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.category-card:hover img {
+    transform: scale(1.1);
+}
+
+.category-card .card-title {
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+/* Tarif Kartları */
+.recipe-card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.recipe-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.recipe-image img {
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.recipe-card:hover .recipe-image img {
+    transform: scale(1.1);
+}
+
+.recipe-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.recipe-card:hover .recipe-overlay {
+    opacity: 1;
+}
+
+.recipe-badge {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    font-size: 0.75rem;
+    border-radius: 20px;
+    z-index: 1;
+}
+
+.recipe-featured {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: var(--primary);
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.75rem;
+    border-radius: 20px;
+    z-index: 1;
+}
+
+.recipe-card .card-title {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.recipe-card .card-title a {
+    color: var(--dark);
+    text-decoration: none;
+}
+
+.recipe-card .card-title a:hover {
+    color: var(--primary);
+}
+
+.recipe-category {
+    font-size: 0.85rem;
+    color: #636e72;
+}
+
+.recipe-time, .recipe-portions {
+    font-size: 0.85rem;
+    color: #636e72;
+}
+
+/* Tarif Detay Sayfası */
+.recipe-detail-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-header {
+    padding: 30px;
+    background-color: #f5f5f5;
+}
+
+.recipe-title {
+    margin-bottom: 20px;
+    font-weight: 800;
+    color: var(--dark);
+}
+
+.recipe-image img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+}
+
+.recipe-ingredients, .recipe-steps {
+    margin-bottom: 30px;
+}
+
+.recipe-ingredients h3, .recipe-steps h3 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: var(--dark);
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary);
+}
+
+.recipe-ingredients .list-group-item, .recipe-steps .list-group-item {
+    padding: 12px 20px;
+    border-color: #f0f0f0;
+}
+
+.recipe-video {
+    margin-top: 40px;
+}
+
+.recipe-author {
+    border-top: 1px solid #eee;
+    margin-top: 40px;
+    padding-top: 20px;
+}
+
+/* Yorumlar */
+.comment {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.comment:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.comment-avatar {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.comment-author {
+    font-weight: 700;
+}
+
+.comment-text {
+    margin-top: 10px;
+}
+
+/* Kategori Banner */
+.category-banner {
+    height: 300px;
+    border: none;
+    overflow: hidden;
+    border-radius: 15px;
+    margin-bottom: 40px;
+}
+
+.category-banner img {
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8);
+    transition: transform 0.5s, filter 0.5s;
+}
+
+.category-banner:hover img {
+    transform: scale(1.05);
+    filter: brightness(0.75);
+}
+
+/* Mutfak İpuçları */
+.kitchen-tip-card {
+    background-color: #f8f9fa;
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
+}
+
+.kitchen-tip-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.kitchen-tip-card .card-title {
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark);
+    color: white;
+    padding: 60px 0 30px;
+}
+
+footer h5 {
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+footer .social-links a {
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+footer .social-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+footer a.text-white:hover {
+    color: var(--primary) !important;
+}
+
+/* Responsive */
+@media (max-width: 767.98px) {
+    .carousel-item {
+        height: 300px;
+    }
+    
+    .carousel-caption {
+        bottom: 20px;
+    }
+    
+    .carousel-caption h2 {
+        font-size: 1.5rem;
+    }
+    
+    .recipe-image img {
+        max-height: 300px;
+    }
+    
+    .category-banner {
+        height: 200px;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease forwards;
+}
+
+.animate-slide-up {
+    animation: slideInUp 1s ease forwards;
+}
+/* Görüntüyü biraz büyütüp ortalayalım */
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #fefefe;
+}
+
+img {
+    width: 300px;
+    height: auto;
+    margin-top: 20px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+}
+
+.navbar-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar-brand img {
+    max-height: 40px !important;
+    width: auto !important;
+    object-fit: contain;
+}
+.navbar-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar-brand img {
+    max-height: 40px !important;
+    width: auto !important;
+    object-fit: contain;
+}
