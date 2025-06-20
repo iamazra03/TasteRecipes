@@ -1,5 +1,8 @@
 [TR]
 # Tarif Lezzetleri
+## Site Adresi
+https://tariflezzetleri.online
+
 
 Yemek tarifleri paylaşımı için geliştirilmiş PHP tabanlı basit web uygulaması.
 
@@ -24,6 +27,9 @@ MIT Lisansı ile dağıtılmaktadır.
 
 [EN]
 # Recipe Flavors
+## Site Address
+https://tariflezzetleri.online
+
 
 Simple PHP based web application for sharing recipes.
 
