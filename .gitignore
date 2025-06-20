@@ -1,6 +1,5 @@
 # CakePHP 3
-
-/vendor/*
+/vendor/
 /config/app.php
 
 /tmp/cache/models/*
@@ -18,8 +17,17 @@
 !/logs/empty
 
 # CakePHP 2
-
-/app/tmp/*
+/app/tmp/
 /app/Config/core.php
 /app/Config/database.php
-/vendors/*
+/vendors/
+
+# Kendi proje özel dosyalarım
+includes/config.php
+
+# Log dosyaları
+*.log
+
+# Sistem dosyaları
+.DS_Store
+Thumbs.db
